@@ -11,10 +11,29 @@
   <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
-    <video class="center" id="background" autoplay loop>
-      <source src="material/water.mp4" />
+
+    <video class="center" id="0" onclick="trigger();" autoplay muted loop style="display: none;">
+      <source src="material/water.mp4" type="video/mp4" />
     </video>
+    <video class="center" id="1" onclick="trigger();" autoplay muted loop style="display: none;">
+      <source src="material/bridge.mp4" type="video/mp4" />
+    </video>
+    <video class="center" id="2" onclick="trigger();" autoplay muted loop style="display: none;">
+      <source src="material/marco.mp4" type="video/mp4" />
+    </video>
+    <video class="center" id="3" onclick="trigger();" autoplay muted loop style="display: none;">
+      <source src="material/aperol.mp4" type="video/mp4" />
+    </video>
+    <video class="center" id="4" onclick="trigger();" autoplay muted loop style="display: none;">
+      <source src="material/pigeon.mp4" type="video/mp4" />
+    </video>
+    
     <img class="center" id="forground" src="" />
+
+    <div class="nav">
+      <img src="arrow_left.png" width="100px" height="100px" alt="left" class="left" onclick="left();">
+      <img src="arrow_right.png" width="100px" height="100px" alt="right" class="right" onclick="right();">
+    </div>
 
   </body>
 </html>
