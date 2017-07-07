@@ -1,0 +1,22 @@
+video{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-height:100%;
+
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -o-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.background{
+  z-index: -100;
+}
+
+.forground{
+  z-index: 100;
+  display: none;
+  //opacity: 0;
+}
