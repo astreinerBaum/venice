@@ -1,7 +1,7 @@
 var triggered = false;
 var now, end;
 var currentIndex = 0;
-var nVideos = 5;
+var nVideos = 6;
 var ani;
 var vid;
 
@@ -10,7 +10,8 @@ var gif = [
   "material/bridge.gif",
   "material/marco.gif",
   "material/aperol.gif",
-  "material/pigeon.gif"
+  "material/pigeon.gif",
+  "material/block.gif"
 ];
 
 function setup() {
