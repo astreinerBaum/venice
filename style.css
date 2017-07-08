@@ -42,19 +42,23 @@ body{
 
 .left{
   position: absolute;
-  margin-top: 50vh;
   left: 20px;
+  height: 100%;
+  width:100px;
   display:flex;
   z-index: 102;
   cursor: pointer;
+  border: none;
 }
 
 .right{
   position: absolute;
-  margin-top: 50vh;
   left: 100%;
-  margin-left: -120px;
+  height: 100%;
+  width:100px;
+  margin-left: -100px;
   z-index: 102;
+  border: none;
   cursor: pointer;
 
 }

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="/custom_icon.png">
+    <link rel="apple-touch-icon" href="icon_main.png">
     <script src="js/p5.min.js"></script>
     <script src="js/p5.dom.min.js"></script>
     <script src="js/p5.sound.min.js"></script>
@@ -27,12 +27,12 @@
     <video class="center" id="4" onclick="trigger();" autoplay muted loop style="display: none;">
       <source src="material/pigeon.mp4" type="video/mp4" />
     </video>
-    
-    <img class="center" id="forground" src="" />
+
+    <!--<img class="center" id="forground" src="" onclick="trigger()"/>-->
 
     <div class="nav">
-      <img src="arrow_left.png" width="100px" height="100px" alt="left" class="left" onclick="left();">
-      <img src="arrow_right.png" width="100px" height="100px" alt="right" class="right" onclick="right();">
+      <div class="left" onclick="left();"></div>
+      <div class="right" onclick="right();"></div>
     </div>
 
   </body>

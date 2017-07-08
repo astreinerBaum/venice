@@ -1,83 +1,106 @@
 var triggered = false;
 var now, end;
-var counter = 0;
-var videolength = 5 - 1;
+var currentIndex = 0;
+var nVideos = 5;
 var ani;
 var vid;
 
 var gif = [
-    "material/water.gif",
-    "material/bridge.gif",
-    "material/marco.gif",
-    "material/aperol.gif",
-    "material/pigeon.gif"
+  "material/water.gif",
+  "material/bridge.gif",
+  "material/marco.gif",
+  "material/aperol.gif",
+  "material/pigeon.gif"
 ];
 
 function setup() {
+  print("Setup")
+
+  ani = select("#forground")
+
   noCanvas();
-  ani = select("#forground");
-  vid = select("#" + counter.toString());
-  vid.show();
+  playVideo(currentIndex)
 }
 
 function draw() {
 
-  now = millis();
+}
 
-  if(triggered == true && end-now <= 0){
-    var ani = select('#forground');
-    ani.attribute('src', '');
-    triggered = false;
+function trigger() {
+
+  print("Trigger");
+
+  stopGif(currentIndex);
+
+  playGif(currentIndex);
+
+}
+
+function playGif(index) {
+
+  print("Play Gif: " + index)
+
+  ani = createImg(gif[index])
+  ani.attribute('class', 'center')
+  ani.attribute('src', gif[index]);
+  ani.attribute('onclick', 'trigger()')
+
+}
+
+function stopGif(index) {
+
+  print("Stop Gif: " + index)
+
+  if (ani != null) {
+    ani.remove()
   }
 
 }
 
+function playVideo(index) {
 
-function trigger(){
-  if (triggered == false){
-    var ani = select('#forground');
-    ani.attribute('src', gif[counter]);
-    releaseGif(5000);
-  }
-}
+  print("Play: " + index)
+  vid = select("#" + index.toString());
 
-function releaseGif(milliseconds){
-  if (triggered == false){
-    end = millis() + milliseconds;
-    triggered = true;
-  }
+  vid.time(0)
+  vid.play()
+  vid.show();
 
 }
 
-function left(){
-  if (counter > 0){
-    vid = select("#" + counter.toString());
-    vid.hide();
-    counter--;
-    vid = select("#" + counter.toString());
-    vid.show();
-  }else{
-    vid = select("#" + counter.toString());
-    vid.hide();
-    counter = videolength;
-    vid = select("#" + counter.toString());
-    vid.show();
+function stopVideo(index) {
+
+  if (vid != null) {
+
+    vid.pause()
+    vid.hide()
+
   }
+
 }
 
-function right(){
-  if (counter < videolength){
-    vid = select("#" + counter.toString());
-    vid.hide();
-    counter++;
-    vid = select("#" + counter.toString());
-    vid.show();
-  }else{
-    vid = select("#" + counter.toString());
-    vid.hide();
-    counter = 0;
-    vid = select("#" + counter.toString());
-    vid.show();
+function left() {
+
+  stopVideo(currentIndex)
+  stopGif(currentIndex)
+
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = nVideos - 1;
   }
+
+  playVideo(currentIndex);
+
+}
+
+function right() {
+
+  stopVideo(currentIndex)
+  stopGif(currentIndex)
+
+  currentIndex++;
+  currentIndex %= nVideos;
+
+  playVideo(currentIndex);
 
 }
