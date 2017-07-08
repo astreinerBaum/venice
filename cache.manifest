@@ -1,0 +1,17 @@
+CACHE MANIFEST
+# This is a comment.
+# Cache manifest version 0.0.1
+# If you change the version number in this comment,
+# the cache manifest is no longer byte-for-byte
+# identical.
+
+material/aperol.gif
+material/aperol.mp4
+material/bridge.gif
+material/bridge.mp4
+material/marco.gif
+material/marco.mp4
+material/pigeon.gif
+material/pigeon.mp4
+material/water.gif
+material/water.mp4
